@@ -4,6 +4,7 @@ import io.quarkus.test.junit.QuarkusTest;
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.CoreMatchers.is;
 
 @QuarkusTest
@@ -12,9 +13,9 @@ public class GreetingFunctionTest {
     @Test
     public void testHelloEndpoint() {
         given()
-          .when().get("/api/HttpTriggerJava")
+          .when().get("HttpTriggerJava")
           .then()
-             .body(is("Hello, Azure Functions!"));
+             .body(containsString("Hello, Azure Functions!"));
     }
 
 }

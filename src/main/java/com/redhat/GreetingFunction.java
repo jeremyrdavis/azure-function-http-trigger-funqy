@@ -13,7 +13,7 @@ public class GreetingFunction {
     public String hello(final GreetingMessage greetingMessage) {
 
         LOGGER.info("received: {}", greetingMessage);
-        return greetingMessage.text == null ? "Hello, Azure Functions!" :  String.format("Hello, %s!", greetingMessage.text);
+        return (greetingMessage == null | greetingMessage.text == null) ? "Hello, Azure Functions!" :  String.format("Hello, %s!", greetingMessage.text);
     }
 
 }
