@@ -14,7 +14,9 @@
 # docker run -i --rm -p 8080:8080 quarkus/azure-function-http-trigger-funqy
 #
 ###
-FROM registry.access.redhat.com/ubi8/ubi-minimal:8.5
+#FROM registry.access.redhat.com/ubi8/ubi-minimal:8.5
+FROM hub.docker.com/mcr.microsoft.com/azure-functions/java:4-java17
+
 WORKDIR /work/
 RUN chown 1001 /work \
     && chmod "g+rwX" /work \
