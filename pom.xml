@@ -6,12 +6,6 @@
   <artifactId>azure-function-http-trigger-funqy</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <properties>
-    <!-- Azure -->
-    <azure.functions.maven.plugin.version>1.19.0</azure.functions.maven.plugin.version>
-    <functionAppName>${projectId.artifactId}-1684334188560</functionAppName>
-    <functionAppRegion>eastus</functionAppRegion>
-    <functionResourceGroup>quarkus-examples</functionResourceGroup>
-    <!-- Azure -->
     <compiler-plugin.version>3.11.0</compiler-plugin.version>
     <maven.compiler.release>17</maven.compiler.release>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -81,35 +75,6 @@
           <compilerArgs>
             <arg>-parameters</arg>
           </compilerArgs>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>com.microsoft.azure</groupId>
-        <artifactId>azure-functions-maven-plugin</artifactId>
-        <version>${azure.functions.maven.plugin.version}</version>
-        <executions>
-          <execution>
-            <id>package-functions</id>
-            <goals>
-              <goal>package</goal>
-            </goals>
-          </execution>
-        </executions>
-        <configuration>
-          <appName>${functionAppName}</appName>
-          <resourceGroup>${functionResourceGroup}</resourceGroup>
-          <appServicePlanName>java-functions-app-service-plan</appServicePlanName>
-          <region>${functionAppRegion}</region>
-          <runtime>
-            <os>linux</os>
-            <javaVersion>11</javaVersion>
-          </runtime>
-          <appSettings>
-            <property>
-              <name>FUNCTIONS_EXTENSION_VERSION</name>
-              <value>~4</value>
-            </property>
-          </appSettings>
         </configuration>
       </plugin>
       <plugin>
