@@ -12,10 +12,9 @@ public class GreetingFunctionTest {
     @Test
     public void testHelloEndpoint() {
         given()
-          .when().get("/hello")
+          .when().get("/api/HttpTriggerJava")
           .then()
-             .statusCode(200)
-             .body(is("Hello from RESTEasy Reactive"));
+             .body(is("Hello, Azure Functions!"));
     }
 
 }
