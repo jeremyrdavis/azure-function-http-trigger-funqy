@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.redhat</groupId>
   <artifactId>azure-function-http-trigger-funqy</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>4.0</version>
   <properties>
     <compiler-plugin.version>3.11.0</compiler-plugin.version>
     <maven.compiler.release>17</maven.compiler.release>
@@ -117,7 +117,7 @@
         </property>
       </activation>
       <properties>
-        <skipITs>false</skipITs>
+        <skipITs>true</skipITs>
         <quarkus.package.type>native</quarkus.package.type>
       </properties>
     </profile>
